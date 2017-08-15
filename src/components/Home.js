@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col} from 'react-bootstrap';
 import $ from 'jquery';
 import 'typeit';
-import HomeBackgroundImage from '../images/background-images/home-static-image.png'
+import HomeBackgroundImage from '../source-files/images/background-images/home-static-image.png';
 
 
 
@@ -18,9 +18,16 @@ import HomeBackgroundImage from '../images/background-images/home-static-image.p
 class Home extends Component {
 
 
+
+
   render() {
     
-
+    var screenWidth = $(window).width();
+    var mobileCheck = false;
+    if (screenWidth < 800){
+      mobileCheck = true
+    }
+    
     return (
       
       // <div>
@@ -30,8 +37,8 @@ class Home extends Component {
       //     </video>
       //   </div>
         <Grid fluid>
-          <div className="fullscreen-bg">
-            <video loop muted autoPlay poster={HomeBackgroundImage} className="fullscreen-bg__video">
+          <div className="fullscreen-bg fullscreen-bg-home">
+            <video loop muted autoPlay={mobileCheck} poster={HomeBackgroundImage} className="fullscreen-bg__video">
               <source src="https://player.vimeo.com/external/194822072.hd.mp4?s=74d6a7693162de0a30c40a70cdcc027dcc7cddd1&amp;profile_id=119&amp;oauth2_token_id=57447761" type="video/mp4"></source>
             </video>
         </div>

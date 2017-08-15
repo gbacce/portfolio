@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col} from 'react-bootstrap';
 import Badge from './Badge';
-import SkillsBackgroundImage from '../images/background-images/skills-static-image.png'
+import SkillsBackgroundImage from '../source-files/images/background-images/skills-static-image.png';
+import $ from 'jquery';
 
 // https://videos.pexels.com/videos/blurred-video-of-scripts-being-typed-735
 
 class Skills extends Component {
+
+    
+
+
   render() {
+
+    var screenWidth = $(window).width();
+    var mobileCheck = false;
+    if (screenWidth < 800){
+      mobileCheck = true
+    }
 
     const badgeColor = "black"
 
@@ -65,8 +76,8 @@ class Skills extends Component {
 
     return (
       <Grid fluid>
-        <div className="fullscreen-bg">
-            <video loop muted autoPlay poster={SkillsBackgroundImage} className="fullscreen-bg__video">
+        <div className="fullscreen-bg fullscreen-bg-skills">
+            <video loop muted autoPlay={mobileCheck} poster={SkillsBackgroundImage} className="fullscreen-bg__video">
               <source src="https://player.vimeo.com/external/190380993.hd.mp4?s=53c3e9ad9da4589411e2be1c3962a9b0a0698cef&amp;profile_id=119&amp;oauth2_token_id=57447761" type="video/mp4"></source>
             </video>
         </div>

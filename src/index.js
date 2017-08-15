@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './source-files/index.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import PageTransition from 'react-router-page-transition';
 

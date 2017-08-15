@@ -127,16 +127,60 @@ svg {
   }
 }
 
-/*@media (max-width: 767px) {
-  .fullscreen-bg {
-    background: url() center center / cover no-repeat;
+@media (max-width: 767px) {
+  .fullscreen-bg-skills {
+    background: url("images/background-images/skills-static-image.png") center center / cover no-repeat;
   }
 
   .fullscreen-bg__video {
     display: none;
   }
-}*/
+}
 
+@media (max-width: 767px) {
+  .fullscreen-bg-projects {
+    background: url("images/background-images/portfolio-static-image.png") center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg-connect {
+    background: url("images/background-images/connect-static-image.png") center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg-about {
+    background: url("images/background-images/about-me-static-image.png") center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg-home {
+    background: url("images/background-images/home-static-image.png") center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
 
 /*HOME*/
 

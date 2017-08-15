@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
-import Email from '../images/email-icon.png';
-import Resume from '../images/resume-icon.png';
-import LinkedIn from '../images/linkedin-icon.svg';
-import GitHub from '../images/github-icon.svg';
+import Email from '../source-files/images/email-icon.png';
+import Resume from '../source-files/images/resume-icon.png';
+import LinkedIn from '../source-files/images/linkedin-icon.svg';
+import GitHub from '../source-files/images/github-icon.svg';
 import Badge from './Badge';
-import ConnectBackgroundImage from '../images/background-images/connect-static-image.png'
+import ConnectBackgroundImage from '../source-files/images/background-images/connect-static-image.png'
+import $ from 'jquery';
 
 // https://videos.pexels.com/videos/meeting-with-friends-1121
 
 // https://player.vimeo.com/external/186188011.hd.mp4?s=8150e3542a0a998863ff4b174039b48b1449867f&amp;profile_id=119&amp;oauth2_token_id=57447761
 
 class ContactInfo extends Component {
+
+
+ 
+
   render() {
+
+    var screenWidth = $(window).width();
+    var mobileCheck = false;
+    if (screenWidth < 800){
+      mobileCheck = true
+    }
     
     const badgeColor = "black"
 
@@ -25,8 +36,8 @@ class ContactInfo extends Component {
     return (
       <Grid fluid>
         <Row>
-          <div className="fullscreen-bg">
-            <video loop muted autoPlay poster={ConnectBackgroundImage} className="fullscreen-bg__video">
+          <div className="fullscreen-bg fullscreen-bg-connect">
+            <video loop muted autoPlay={mobileCheck} poster={ConnectBackgroundImage} className="fullscreen-bg__video">
               <source src="https://player.vimeo.com/external/186188011.hd.mp4?s=8150e3542a0a998863ff4b174039b48b1449867f&amp;profile_id=119&amp;oauth2_token_id=57447761" type="video/mp4"></source>
             </video>
          </div>

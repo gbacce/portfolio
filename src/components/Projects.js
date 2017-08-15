@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import PortfolioBackgroundImage from '../images/background-images/portfolio-static-image.png'
+import PortfolioBackgroundImage from '../source-files/images/background-images/portfolio-static-image.png';
+import $ from 'jquery';
 
 // https://player.vimeo.com/external/174002648.hd.mp4?s=a93798103ef5b0363f17bd6f4b3dc04e54ce37b2&amp;profile_id=119&amp;oauth2_token_id=57447761
 
 class Projects extends Component {
+
+
   render() {
+
+    var screenWidth = $(window).width();
+    var mobileCheck = false;
+    if (screenWidth < 800){
+      mobileCheck = true
+    }
+
     return (
       <Grid fluid className='project-container'>
-      <div className="fullscreen-bg">
-            <video loop muted autoPlay poster={PortfolioBackgroundImage} className="fullscreen-bg__video">
+      <div className="fullscreen-bg fullscreen-bg-projects">
+            <video loop muted autoPlay={mobileCheck} poster={PortfolioBackgroundImage} className="fullscreen-bg__video">
               <source src="https://player.vimeo.com/external/174002648.hd.mp4?s=a93798103ef5b0363f17bd6f4b3dc04e54ce37b2&amp;profile_id=119&amp;oauth2_token_id=57447761" type="video/mp4"></source>
             </video>
         </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col} from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 class Badge extends Component {
   render() {
