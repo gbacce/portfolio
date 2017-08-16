@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+import Project from './Project'
 import PortfolioBackgroundImage from '../source-files/images/background-images/portfolio-static-image.png';
+import CycslopeImage from '../source-files/images/cycslope-image.png';
+import TravelistImage from '../source-files/images/travelist-image.png';
 import $ from 'jquery';
 
 // https://player.vimeo.com/external/174002648.hd.mp4?s=a93798103ef5b0363f17bd6f4b3dc04e54ce37b2&amp;profile_id=119&amp;oauth2_token_id=57447761
 
-class Projects extends Component {
 
+// Notes:
+
+//  Project container might look better around each project rather than one big box with all the projects inside.
+
+//  Buttons are getting longer than the image once window collapses to medium size. 
+//    Possible solutions:
+//       Easiest if it works: Use images that are 734px wide. If I edit the original pages before I screenshot, and either add bottom-padding or margin or make the actual content larger, this would work.
+//       Set the max width of button group to width of image. But then between 520px and 720px the image is left aligned and the empty space is the actual content, not the margin or padding. 
+
+//  Add top padding to each project.
+
+
+class Projects extends Component {
 
   render() {
 
@@ -16,9 +31,19 @@ class Projects extends Component {
       mobileCheck = true
     }
 
-    return (
-      <Grid fluid className='project-container'>
 
+    const cycslopeDemo = 'cycslope.guidobacce.com';
+    const cycslopeRepo = 'https://github.com/merileewheelock/cycSlope';
+    const cycslopeImage = CycslopeImage;
+
+    const travelistDemo = 'travelist.guidobacce.com';
+    const travelistRepo = 'https://github.com/merileewheelock/traveList';
+    const travelistImage = TravelistImage;
+
+
+
+    return (
+      <Grid fluid className='project-section-container'>
 
         <div className="fullscreen-bg fullscreen-bg-projects">
           <video loop muted autoPlay={mobileCheck} poster={PortfolioBackgroundImage} className="fullscreen-bg__video">
@@ -33,7 +58,8 @@ class Projects extends Component {
            
 
             <Col xs={12} xsOffset={0} className='project-div text-center'>
-              <h1>Coming soon...</h1>
+              <Project demo={cycslopeDemo} repo={cycslopeRepo} image={cycslopeImage} />
+              <Project demo={travelistDemo} repo={travelistRepo} image={travelistImage} />
             </Col>
 
           </Col>

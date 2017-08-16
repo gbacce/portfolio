@@ -73,10 +73,14 @@ svg {
 
 /*PROJECT*/
 
-.project-container {
+.project-section-container {
   height: 95%;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+.project-container {
+  padding-top: 40px
 }
 
 .portfolio-heading {
@@ -91,6 +95,11 @@ svg {
   margin-bottom: 0px;
   background-color: rgba(211,211,211,.4);
 }
+
+.project-button-group {
+  /*max-width: 519px;*/
+}
+
 
 
 /*VIDEO*/
